@@ -1,0 +1,387 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.overflow {
+  overflow: hidden;
+}
+
+@mixin tabletSocial {
+  @media (max-width: 1200px) {
+    .social {
+      visibility: hidden;
+      height: 20px;
+    }
+  }
+}
+@mixin tabletNavigation {
+  @media (max-width: 1200px) {
+    .burger {
+      position: absolute;
+      z-index: 15;
+      top: 50px;
+      right: 65px;
+      transform: translateX(50%);
+      cursor: pointer;
+      .bar {
+        width: 40px;
+        height: 5px;
+        background-color: black;
+        margin: 5px 0;
+      }
+    }
+    .navigation {
+      transform: translateX(100%);
+      position: absolute;
+      z-index: 10;
+      right: 0;
+      background-color: red;
+      height: 100vh;
+      width: 50vw;
+      .navigation__buttons {
+        flex-direction: column;
+        margin-top: 150px;
+        height: calc(100vh - 170px);
+        justify-content: space-around;
+        li {
+          text-align: center;
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+    }
+    .active {
+      transform: translateX(0);
+    }
+    .logo {
+      img {
+        margin: 15px 20px 0;
+        max-width: 150px;
+      }
+    }
+  }
+}
+@mixin tabletButtonAndH1 {
+  @media (max-width: 1050px) {
+    h1 {
+      font-size: 40px;
+      text-align: center;
+      top: 20%;
+    }
+    button {
+      top: 72%;
+      font-size: 15px;
+    }
+  }
+}
+@mixin galleryHidden {
+  @media (max-width: 1050px) {
+    .cnt4,
+    .cnt5,
+    .cnt6 {
+      display: none;
+    }
+  }
+}
+@mixin offerdesc {
+  @media (max-width: 1250px) {
+    .ouroffer {
+      flex-direction: column;
+      .choice {
+        text-align: center;
+        margin-top: 50px;
+      }
+      .choiceimage {
+        padding: 40px;
+      }
+    }
+  }
+}
+@mixin contact {
+  @media (max-width: 600px) {
+    h3 {
+      font-size: 30px;
+      margin-top: 50px;
+    }
+  }
+}
+.wrapper {
+  overflow: hidden;
+  background-color: lighten($color: #12192c, $amount: 15);
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  header {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #12192c;
+    //SOCIAL MEDIA & CONTACT SECTION START//
+    .social {
+      display: flex;
+      height: 50px;
+      align-items: center;
+      .contact {
+        flex: 1;
+        .contact__details {
+          display: flex;
+          list-style: none;
+          li {
+            flex: 1;
+            padding-left: 15px;
+            cursor: pointer;
+            span {
+              padding-right: 5px;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+      .socialmedia {
+        flex: 1;
+        .socialmedia__details {
+          list-style: none;
+          display: flex;
+          li {
+            flex: 1;
+            padding-right: 15px;
+            text-align: right;
+            cursor: pointer;
+            span {
+              padding-right: 5px;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+      //SOCIAL MEDIA & CONTACT SECTION START//
+    }
+    @include tabletSocial;
+    //TITLE & MENU SECTION START//
+    .title {
+      height: 150px;
+      background-color: lighten($color: #000000, $amount: 80);
+      display: flex;
+      position: relative;
+      .logo {
+        flex: 4;
+        img {
+          max-width: 200px;
+          padding: 10px 0 0 10px;
+        }
+      }
+      .navigation {
+        flex: 6;
+        transition: 0.5s ease;
+        .navigation__buttons {
+          display: flex;
+          .buttons__main {
+            color: black;
+            font-weight: bold;
+          }
+          li {
+            flex: 1;
+            list-style: none;
+            margin-top: 50px;
+            cursor: pointer;
+          }
+          li:hover {
+            color: gray;
+          }
+        }
+      }
+      @include tabletNavigation;
+    }
+    //TITLE & MENU SECTION END//
+  }
+  //MAIN GALLERY START//
+  .images {
+    max-width: 1200px;
+    margin: 0 auto;
+    .gallery {
+      .slider {
+        position: relative;
+        overflow: hidden;
+        img {
+          max-width: 100%;
+        }
+        h1 {
+          position: absolute;
+          transform: translate(-50%);
+          top: 50%;
+          left: 50%;
+          font-size: 60px;
+        }
+
+        button {
+          position: absolute;
+          transform: translateX(-50%);
+          top: 65%;
+          left: 50%;
+          width: 250px;
+          box-shadow: 0px 10px 14px -7px #276873;
+          background-color: #ff0000;
+          border-radius: 8px;
+          display: inline-block;
+          cursor: pointer;
+          color: #ffffff;
+          font-family: Arial;
+          font-size: 20px;
+          font-weight: bold;
+          padding: 13px 32px;
+          text-decoration: none;
+          text-shadow: 0px 1px 0px #3d768a;
+          outline: none;
+          box-shadow: none;
+          border-style: solid;
+          border-color: transparent;
+        }
+        button:active {
+          border-style: solid;
+          border-color: transparent;
+        }
+        button:focus {
+          border-style: solid;
+          border-color: transparent;
+        }
+        button:hover {
+          background-color: yellow;
+          transition: 0.3s ease-in-out;
+          color: black;
+        }
+        @include tabletButtonAndH1;
+      }
+    }
+  }
+  //MAIN GALLERY END//
+  //SECOND GALLERY START//
+  .offer {
+    margin-top: 10px;
+    .offergallery {
+      display: flex;
+      // flex-wrap: wrap;
+      div {
+        position: relative;
+        width: 150px;
+        flex: 1;
+        .cover {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 5;
+          background-color: red;
+          opacity: 0.5;
+          transition: 0.5s ease;
+          cursor: pointer;
+        }
+        .cover:hover {
+          opacity: 0.8;
+        }
+        img {
+          width: 100%;
+        }
+      }
+      @include galleryHidden;
+    }
+  }
+  main {
+    background-color: white;
+    color: black;
+    .ouroffer {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+
+      .choice {
+        flex: 1;
+        margin-top: 80px;
+        h5,
+        h3 {
+          padding: 10px 0;
+        }
+        h5 {
+          font-size: 25px;
+        }
+        h3 {
+          font-size: 45px;
+          text-transform: uppercase;
+        }
+        p {
+          line-height: 2em;
+        }
+        button {
+          margin-top: 20px;
+          box-shadow: 0px 10px 14px -7px #276873;
+          background-color: #ff0000;
+          border-radius: 8px;
+          display: inline-block;
+          cursor: pointer;
+          color: #ffffff;
+          font-family: Arial;
+          font-size: 20px;
+          font-weight: bold;
+          padding: 13px 32px;
+          text-decoration: none;
+          text-shadow: 0px 1px 0px #3d768a;
+          outline: none;
+          box-shadow: none;
+          border-style: solid;
+          border-color: transparent;
+        }
+        button:hover {
+          background-color: darken($color: red, $amount: 20);
+          transition: 0.3s ease-in-out;
+        }
+      }
+      .choiceimage {
+        flex: 1;
+        padding: 30px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    @include offerdesc;
+    .contact {
+      background-color: red;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 20px 0;
+      color: white;
+      height: 300px;
+      h3 {
+        font-size: 50px;
+        margin-top: 50px;
+      }
+      h4 {
+        font-size: 20px;
+        margin-top: 20px;
+      }
+      @include contact;
+      button {
+        margin-top: 20px;
+        box-shadow: 0px 10px 14px -7px #276873;
+        background-color: #12192c;
+        border-radius: 8px;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: Arial;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 13px 32px;
+        text-decoration: none;
+        text-shadow: 0px 1px 0px #3d768a;
+        outline: none;
+        box-shadow: none;
+        border-style: solid;
+        border-color: transparent;
+      }
+      button:hover {
+        background-color: darken($color: #12192c, $amount: 20);
+        transition: 0.3s ease-in-out;
+      }
+    }
+  }
+  //SECOND GALLERY END//
+}

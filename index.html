@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car rent</title>
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="headwrap">
+                <div class="social">
+                    <div class="contact">
+                        <ul class="contact__details">
+                            <li>Skontaktuj się z nami:</li>
+                            <li><span><i class="fas fa-envelope-open-text"></i></span>wynajem@carrent.pl</li>
+                            <li><span><i class="fas fa-phone"></i></span>513 904 044</li>
+                        </ul>
+                    </div>
+                    <div class="socialmedia">
+                        <ul class="socialmedia__details">
+                            <li><span><i class="fab fa-facebook"></i></span>Facebook</li>
+                            <li><span><i class="fab fa-instagram"></i></span>Instagram</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="title">
+                    <div class="logo">
+                        <img src="images/rent_logo.png" alt="carrent">
+                    </div>
+                    <div class="navigation">
+
+                        <ul class="navigation__buttons">
+                            <li class="buttons__main">Strona główna</li>
+                            <li>Oferta</li>
+                            <li>O firmie</li>
+                            <li>Galeria</li>
+                            <li>Kontakt</li>
+                        </ul>
+                    </div>
+                    <div class="burger">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <section class="images">
+            <div class="gallery">
+                <div class="slider">
+                    <img src="https://cdn.pixabay.com/photo/2017/08/26/06/02/car-2682237_1280.jpg" alt="dodge">
+                    <h1>Dodge Challenger</h1>
+                    <button>Zobacz cennik</button>
+                </div>
+            </div>
+        </section>
+        <section class="offer">
+            <div class="offergallery">
+                <div class="cnt1">
+                    <div class="cover"></div><img class="one" 
+                        src="https://i.pinimg.com/originals/a4/3e/d7/a43ed7f237cc4891e7b445dc0aa0f4d5.jpg" alt="">
+                </div>
+                <div class="cnt2">
+                    <div class="cover"></div><img class="two"
+                        src="https://www.gannett-cdn.com/-mm-/20756d175e5b095227a7e41dc57475ea2d727234/c=824-0-4104-3280/local/-/media/2020/04/01/DetroitNews/B99879473Z.1_20200401212612_000_GPO2QIKRG.1-0.jpg"
+                        alt="">
+                </div>
+                <div class="cnt3">
+                    <div class="cover"></div><img class="three"
+                        src="https://ocs-pl.oktawave.com/v1/AUTH_2887234e-384a-4873-8bc5-405211db13a2/autoblog/2019/08/Ford-Mustang-Bullitt-2019-test-8-1024x1024-c-center.jpg"
+                        alt="">
+                </div>
+                <div class="cnt4">
+                    <div class="cover"></div><img class="four"
+                        src="https://cdn.shopify.com/s/files/1/1680/5355/products/IMG_0752_2000x.jpg?v=1570623439"
+                        alt="">
+                </div>
+                <div class="cnt5">
+                    <div class="cover"></div><img class="five"
+                        src="https://img.sm360.ca/images/inventory/wyant-group/volvo/xc90-hybrid/2016/6608488/6608488_04773_2016-volvo-xc90-hybrid_001.jpg"
+                        alt="">
+                </div>
+                <div class="cnt6">
+                    <div class="cover"></div><img class="six"
+                        src="https://www.v10.pl/archiwum/galeria/2019/BMW_7_2020/bmw_7_2020_7.jpg" alt="">
+                </div>
+            </div>
+        </section>
+        <main>
+            <div class="ouroffer">
+                <div class="choice">
+                    <h5>Bogata oferta</h5>
+                    <h3>Szeroki wybór</h3>
+                    <p>Szeroki wybór aut z różnych części Polski. Możliwość wynajmu krótko- lub długoterminowego.</p>
+                    <button>Zobacz pełną ofertę</button>
+                </div>
+                <div class="choiceimage">
+                    <img src="https://cdn.pixabay.com/photo/2020/05/13/12/37/gearbox-5167308_1280.jpg" alt="">
+                </div>
+            </div>
+            <div class="contact">
+                <h3>Zainteresowany?</h3>
+                <h4>Skontaktuj się z nami</h4>
+                <button>Formularz kontaktowy</button>
+            </div>
+        </main>
+    </div>
+    <script>
+        $('.burger').on('click', function () {
+            $('.navigation').toggleClass('active')
+            $('body').toggleClass('overflow')
+        })
+        //transition during resizing fix//
+        $(window).on('resize', function () {
+            $('.navigation').css('transition', 'none')
+            setTimeout(function () {
+                $('.navigation').css('transition', '.5s ease')
+            }, 100)
+        });
+        
+
+    </script>
+</body>
+
+</html>
